@@ -42,6 +42,11 @@ filetype plugin on    " required
 " row number and syntax
 set number
 set ruler
+syntax enable
+syntax on
+set background=dark
+let g:molokai_original=1
+colorscheme molokai
 
 " tab related
 set ts=4 
