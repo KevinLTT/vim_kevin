@@ -39,6 +39,11 @@ filetype plugin on    " required
 
 " vundle的配置到此结束，下面是你自己的配置
 
+" YCM hotkey
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " row number and syntax
 set number
 set ruler
