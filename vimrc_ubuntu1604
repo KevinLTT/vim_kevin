@@ -14,9 +14,17 @@ Plugin 'scrooloose/nerdcommenter'
 
 " auto complete
 Plugin 'Valloric/YouCompleteMe'
+" YCM hotkey
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0
 
 " smart bracket
 Plugin 'jiangmiao/auto-pairs'
+let g:AutoPairsFlyMode=1
+let g:AutoPairsShortcutBackInsert = '<C-t>'
 
 " file tree
 Plugin 'scrooloose/nerdtree'
@@ -39,12 +47,6 @@ filetype plugin on    " required
 
 " vundle的配置到此结束，下面是你自己的配置
 
-" YCM hotkey
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0
 
 " row number and syntax
 set number
