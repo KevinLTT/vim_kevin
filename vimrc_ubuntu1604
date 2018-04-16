@@ -32,6 +32,9 @@ Plugin 'scrooloose/nerdtree'
 " powerline
 Plugin 'Lokaltog/vim-powerline'
 
+" surround
+Plugin 'tpope/vim-surround'
+
 " 安装插件写在这之前
 call vundle#end()            " required
 filetype plugin on    " required
@@ -106,3 +109,4 @@ let g:Powerline_symbols= 'unicode'
 set encoding=utf8
 
 noremap <C-p> "+p
+noremap <C-y> "+y
