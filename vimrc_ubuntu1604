@@ -28,6 +28,7 @@ let g:AutoPairsShortcutBackInsert = '<C-t>'
 
 " file tree
 Plugin 'scrooloose/nerdtree'
+autocmd vimenter * NERDTree | wincmd p
 
 " powerline
 Plugin 'Lokaltog/vim-powerline'
