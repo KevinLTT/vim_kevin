@@ -24,6 +24,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_path_to_python_interpreter='/usr/bin/python'
 
 " smart bracket
 Plugin 'jiangmiao/auto-pairs'
@@ -40,6 +41,9 @@ Plugin 'Lokaltog/vim-powerline'
 " surround
 Plugin 'tpope/vim-surround'
 
+Plugin 'tell-k/vim-autopep8'
+Plugin 'Yggdroot/indentLine'
+
 " 安装插件写在这之前
 call vundle#end()            " required
 filetype plugin on    " required
@@ -54,6 +58,20 @@ filetype plugin on    " required
 " h: vundle         - 获取帮助
 
 " vundle的配置到此结束，下面是你自己的配置
+
+" press F5 to run python
+map <F5> :Autopep8<CR> :w<CR> :call RunPython()<CR>
+function RunPython()
+    let mp = &makeprg
+    let ef = &errorformat
+    let exeFile = expand("%:t")
+    setlocal makeprg=python\ -u
+    set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+    silent make %
+    copen
+    let &makeprg = mp
+    let &errorformat = ef
+endfunction
 
 
 " row number and syntax
