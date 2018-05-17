@@ -41,8 +41,17 @@ Plugin 'Lokaltog/vim-powerline'
 " surround
 Plugin 'tpope/vim-surround'
 
+" auto standardize the code
 Plugin 'tell-k/vim-autopep8'
+let g:autopep8_disable_show_diff=1
+
+" indent line
 Plugin 'Yggdroot/indentLine'
+let g:indentLine_char='┆'
+let g:indentLine_enabled = 1
+
+" rename
+Plugin 'danro/rename.vim'
 
 " 安装插件写在这之前
 call vundle#end()            " required
