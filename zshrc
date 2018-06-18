@@ -1,28 +1,25 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-#pycaffe
-export PYTHONPATH="/usr/local/python:$PYTHONPATH"
-
 # CUDA
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+# export PATH="/usr/local/cuda/bin:$PATH"
+# export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
 # anaconda3
-export PATH="/home/kevin/anaconda3/bin:$PATH"
-export LD_LIBRARY_PATH="/home/kevin/anaconda3/lib:$LD_LIBRARY_PATH"
+# export PATH="/home/kevin/anaconda3/bin:$PATH"
+# export LD_LIBRARY_PATH="/home/kevin/anaconda3/lib:$LD_LIBRARY_PATH"
 
 # anaconda2
-export PATH="/home/kevin/anaconda2/bin:$PATH"
-export LD_LIBRARY_PATH="/home/kevin/anaconda2/lib:$LD_LIBRARY_PATH"
+# export PATH="/home/kevin/anaconda2/bin:$PATH"
+# export LD_LIBRARY_PATH="/home/kevin/anaconda2/lib:$LD_LIBRARY_PATH"
 
 # texlive
-export PATH="/usr/local/texlive/2017/bin/x86_64-linux:$PATH"
-export MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
-export INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
+# export PATH="/usr/local/texlive/2017/bin/x86_64-linux:$PATH"
+# export MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
+# export INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
 
 # some alias
-alias 'sai'='sudo apt install'
+# alias 'sai'='sudo apt install'
 alias 'pc'='proxychains'
 alias 'gitm'='git commit -m'
 alias 'gita'='git add .'
@@ -31,7 +28,7 @@ alias 'gitd'='proxychains git pull'
 alias 'gitp'='proxychains git push'
 
 # autojump activation
-. /usr/share/autojump/autojump.sh
+. /usr/share/autojump/autojump.zsh
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/kevin/.oh-my-zsh
