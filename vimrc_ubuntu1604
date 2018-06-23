@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter'
 
 " auto complete
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 " YCM hotkey
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
@@ -25,6 +25,7 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_path_to_python_interpreter='/usr/bin/python'
+"let g:loaded_youcompleteme = 1
 
 " smart bracket
 Plugin 'jiangmiao/auto-pairs'
@@ -52,6 +53,19 @@ let g:indentLine_enabled = 1
 
 " rename
 Plugin 'danro/rename.vim'
+
+" latex plugin
+Plugin 'lervag/vimtex'
+let g:vimtex_view_method = 'zathura'
+
+" snippets
+Plugin 'SirVer/ultisnips'
+" split window when use :UltiSnipsEdit
+let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+let g:UltiSnipsSnippetDirectories = ['.vim/UltiSnips', 'UltiSnips']
 
 " 安装插件写在这之前
 call vundle#end()            " required
@@ -92,7 +106,7 @@ set background=dark
 let g:molokai_original=1
 colorscheme molokai
 set splitbelow
-set mouse=a
+set mouse-=a
 
 " tab related
 set ts=4 
@@ -104,8 +118,10 @@ set autoindent
 " turn off auto comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" turn off fcitx when switch to normal mode
-let g:input_toggle = 1
+"##### auto fcitx  ###########
+inoremap <C-c> <Esc>
+
+let g:input_toggle = 0
 function! Fcitx2en()
    let s:input_status = system("fcitx-remote")
    if s:input_status == 2
@@ -122,8 +138,15 @@ function! Fcitx2zh()
    endif
 endfunction
 
-" set timeoutlen=10
+set ttimeoutlen=5
+"退出插入模式
 autocmd InsertLeave * call Fcitx2en()
+"进入插入模式
+autocmd InsertEnter * call Fcitx2zh()
+""##### auto fcitx end ######
+
+"" set timeoutlen=10
+"autocmd InsertLeave * call Fcitx2en()
 " autocmd InsertEnter * call Fcitx2zh()
 
 " set default shell as zsh

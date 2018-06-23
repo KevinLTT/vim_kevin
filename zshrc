@@ -1,13 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# tldr
+export PATH="/home/kevin/bin:$PATH"
+
 # CUDA
 # export PATH="/usr/local/cuda/bin:$PATH"
 # export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
 # anaconda3
-# export PATH="/home/kevin/anaconda3/bin:$PATH"
-# export LD_LIBRARY_PATH="/home/kevin/anaconda3/lib:$LD_LIBRARY_PATH"
+#export PATH="/opt/anaconda/bin/activate:$PATH"
+#export LD_LIBRARY_PATH="/home/kevin/anaconda3/lib:$LD_LIBRARY_PATH"
 
 # anaconda2
 # export PATH="/home/kevin/anaconda2/bin:$PATH"
@@ -27,11 +30,22 @@ alias 'gitc'='proxychains git clone'
 alias 'gitd'='proxychains git pull'
 alias 'gitp'='proxychains git push'
 
+# color man
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
+
 # autojump activation
 . /usr/share/autojump/autojump.zsh
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/kevin/.oh-my-zsh
+export ZSH=/home/kevin/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
