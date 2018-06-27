@@ -57,15 +57,17 @@ Plugin 'danro/rename.vim'
 " latex plugin
 Plugin 'lervag/vimtex'
 let g:vimtex_view_method = 'zathura'
+let g:tex_conceal = ""
+let g:tex_flavor = "latex"
 
 " snippets
 Plugin 'SirVer/ultisnips'
 " split window when use :UltiSnipsEdit
-let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsEditSplit = 'horizontal'
 let g:UltiSnipsExpandTrigger = '<C-j>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-let g:UltiSnipsSnippetDirectories = ['.vim/UltiSnips', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['/home/kevin/.vim/UltiSnips', 'UltiSnips']
 
 " 安装插件写在这之前
 call vundle#end()            " required
@@ -99,6 +101,7 @@ endfunction
 
 " row number and syntax
 set number
+set relativenumber
 set ruler
 syntax enable
 syntax on
